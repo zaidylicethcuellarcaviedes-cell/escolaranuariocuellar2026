@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anuario Escolar - I.E. Eugenio Ferro Falla</title>
+  
+  <!-- Fuentes Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cinzel:wght@700;900&family=Great+Vibes&family=Outfit:wght@400;600;800;900&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+  
+  <!-- SDKs de Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="app-header">
+    <div class="header-brand">
+      <span class="badge-sparkle">🎓 PROM 2026</span>
+      <h1>Anuario Escolar <span>Eugenio Ferro Falla</span></h1>
+    </div>
+
+    <!-- Navegación por páginas -->
+    <nav class="book-nav" aria-label="Navegación del anuario">
+      <button id="btn-prev" class="btn-nav" title="Página anterior">◀ Anterior</button>
+      <div class="page-counter">
+        <span>Pág.</span>
+        <select id="page-select" title="Seleccionar página"></select>
+        <span>de <strong id="total-pages-display">34</strong></span>
+      </div>
+      <button id="btn-next" class="btn-nav" title="Página siguiente">Siguiente ▶</button>
+    </nav>
+
+    <!-- Estado de sincronización -->
+    <div class="header-actions">
+      <button id="btn-save" class="btn-action primary">☁️ Sincronizado en la Nube</button>
+      <button id="btn-print" class="btn-action outline">🖨️ PDF / Imprimir</button>
+    </div>
+  </header>
+
+  <!-- PALETA LATERAL DE STICKERS (MÁS GRANDES) -->
+  <aside class="sticker-palette">
+    <span class="palette-title">🎨 STICKERS</span>
+    <div class="stickers-grid">
+      <button class="sticker-btn" data-sticker="🔥">🔥</button>
+      <button class="sticker-btn" data-sticker="⭐">⭐</button>
+      <button class="sticker-btn" data-sticker="💖">💖</button>
+      <button class="sticker-btn" data-sticker="🎧">🎧</button>
+      <button class="sticker-btn" data-sticker="👑">👑</button>
+      <button class="sticker-btn" data-sticker="🚀">🚀</button>
+      <button class="sticker-btn" data-sticker="🎓">🎓</button>
+      <button class="sticker-btn" data-sticker="✨">✨</button>
+    </div>
+  </aside>
+
+  <!-- CONTENEDOR VIRTUAL DEL LIBRO 3D -->
+  <main class="book-viewport">
+    <div id="book" class="book-container">
+      <!-- Las páginas se construyen dinámicamente -->
+    </div>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="app-footer">
+    <p>Institución Educativa <strong>Eugenio Ferro Falla</strong> — <em>"Hoy estudiante, mañana gran sueño"</em></p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
